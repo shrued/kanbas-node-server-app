@@ -9,4 +9,5 @@ const courseSchema = new mongoose.Schema(
   },
   { collection: "courses" }
 );
+
 export default courseSchema;
