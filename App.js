@@ -19,7 +19,17 @@ mongoose.connect(
 // mongoose.connect(CONNECTION_STRING);
 
 const app = express();
-app.use(cors({ credentials: true, origin: process.env.FRONTEND_URL }));
+app.use(
+  cors({
+    credentials: true,
+    origin: [
+      "https://a6--melodic-quokka-9bdc94.netlify.app",
+      "https://a5--melodic-quokka-9bdc94.netlify.app",
+      "http://localhost:3000",
+    ],
+    // origin: process.env.FRONTEND_URL
+  })
+);
 const sessionOptions = {
   secret: process.env.SESSION_SECRET,
   resave: false,
