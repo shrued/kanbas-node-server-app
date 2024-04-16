@@ -26,7 +26,6 @@ export default function CourseRoutes(app) {
   });
 
   app.delete("/api/courses/:id", async (req, res) => {
-    console.log(req.params);
     const { id } = req.params;
     try {
       const status = await dao.deleteCourse(id);
@@ -37,9 +36,7 @@ export default function CourseRoutes(app) {
   });
 
   app.post("/api/courses", async (req, res) => {
-    console.log(req.body);
     const course = await dao.createCourse(req.body);
-    console.log(course);
     res.send(course);
   });
 

@@ -4,7 +4,6 @@ function ModuleRoutes(app) {
   app.put("/api/modules/:mid", async (req, res) => {
     const { mid } = req.params;
     const module = req.body;
-    console.log(mid, module);
     try {
       const status = await dao.updateModule(mid, module);
       res.json(status);
